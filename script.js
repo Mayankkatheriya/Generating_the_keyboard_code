@@ -1,6 +1,7 @@
 let keyBox = document.querySelector(".keyBox");
-const audio = new Audio("./mixkit-hard-single-key-press-in-a-laptop-2542.wav");
+const audio = new Audio("./audio1.mp3");
 document.body.addEventListener("keydown", function(e){
+    audio.play();
     let key = e.key;
     if(e.shiftKey && e.keyCode!=16){
         key = `Shift+${e.key}`
@@ -12,5 +13,4 @@ document.body.addEventListener("keydown", function(e){
     keyBox.innerHTML = `
     <h1 class = "key">You Pressed: <span>${key}</span></h1>
     <div class = "code">${keyCode}</div>`;
-    audio.play();
 });
